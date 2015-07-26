@@ -1,0 +1,167 @@
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700);
+@import url(../bower_components/normalize-css/normalize.css);
+html {
+  height: 100%; }
+
+@media (max-width: 767px) {
+  body {
+    padding: 20px 20px 20px 20px;
+    height: calc(100% - 40px); } }
+@media (min-width: 768px) {
+  body {
+    padding: 40px 60px 60px 60px;
+    height: calc(100% - 100px); } }
+
+.backgroundFilter {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: saturate(150%) brightness(0.9);
+          filter: saturate(150%) brightness(0.9);
+  z-index: -1;
+  position: fixed;
+  background-size: cover;
+  background-image: url(../images/brisbaneStoryBridge.jpg);
+  background-repeat: none;
+  background-position: center center;
+  background-attachment: fixed; }
+  @media (max-width: 767px) {
+    .backgroundFilter {
+      -webkit-filter: brightness(0.8);
+              filter: brightness(0.8); } }
+
+.textualLink {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  -webkit-transition: border-color 500ms ease-in-out;
+          transition: border-color 500ms ease-in-out; }
+  .textualLink:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    -webkit-transition: border-color 500ms ease-in-out;
+            transition: border-color 500ms ease-in-out; }
+
+header {
+  margin: 0 auto 0 auto;
+  text-align: center;
+  max-width: 880px;
+  font-family: "Source Code Pro", sans-serif;
+  text-transform: uppercase; }
+  @media (max-width: 767px) {
+    header {
+      padding-top: 10px; }
+      header a {
+        font-size: 2.4em; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    header {
+      padding-top: 20px; }
+      header a {
+        font-size: 3em; } }
+  @media (min-width: 1024px) and (max-width: 1599px) {
+    header {
+      padding-top: 20px; }
+      header a {
+        font-size: 4.5em; } }
+  @media (min-width: 1600px) {
+    header {
+      padding-top: 40px; }
+      header a {
+        font-size: 4.8em; } }
+
+ul {
+  list-style: none;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  text-align: center;
+  max-width: 880px; }
+  @media (min-width: 1600px) {
+    ul {
+      max-width: 1280px; } }
+
+@media (min-width: 1024px) and (max-width: 1599px) {
+  .mainLinks {
+    margin-top: 20%; } }
+@media (min-width: 1600px) {
+  .mainLinks {
+    margin-top: 15%; } }
+.mainLinks .link a {
+  font-family: "Source Code Pro", sans-serif; }
+@media (max-width: 767px) {
+  .mainLinks .link {
+    padding: 20px;
+    display: block; }
+    .mainLinks .link a {
+      font-size: 1.4em; } }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mainLinks .link {
+    padding: 35px 30px;
+    display: block; }
+    .mainLinks .link a {
+      font-size: 1.8em; } }
+@media (min-width: 1024px) and (max-width: 1599px) {
+  .mainLinks .link {
+    padding: 0 50px;
+    display: inline-block; }
+    .mainLinks .link a {
+      font-size: 2.2em; } }
+@media (min-width: 1600px) {
+  .mainLinks .link {
+    padding: 0 80px;
+    display: inline-block; }
+    .mainLinks .link a {
+      font-size: 2.8em; } }
+
+.footerLinks {
+  margin: 0 auto;
+  position: fixed;
+  margin: auto;
+  max-width: 880px; }
+  @media (max-width: 767px) {
+    .footerLinks {
+      bottom: 40px;
+      left: 20px;
+      right: 20px; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .footerLinks {
+      bottom: 40px;
+      left: 60px;
+      right: 60px; } }
+  @media (min-width: 1024px) {
+    .footerLinks {
+      bottom: 40px;
+      left: 60px;
+      right: 60px; } }
+  .footerLinks .footerLink {
+    margin: 0 1% 0 1%;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    -webkit-transition: .5s;
+            transition: .5s; }
+    @media (min-width: 1024px) and (max-width: 1599px) {
+      .footerLinks .footerLink {
+        width: 66px;
+        height: 66px; } }
+    @media (min-width: 1600px) {
+      .footerLinks .footerLink {
+        width: 88px;
+        height: 88px; } }
+    .footerLinks .footerLink:hover {
+      background-color: black;
+      -webkit-transition: .5s;
+              transition: .5s; }
+    .footerLinks .footerLink .linkWrapper {
+      cursor: pointer; }
+      .footerLinks .footerLink .linkWrapper .socialIcon path {
+        fill: #fff;
+        -webkit-transition: .5s;
+                transition: .5s; }
+
+footer {
+  color: #fff;
+  position: fixed;
+  bottom: 0; }

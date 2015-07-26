@@ -1,0 +1,48 @@
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700);
+@import url(../bower_components/normalize-css/normalize.css);
+html {
+  height: 100%; }
+
+body {
+  text-align: center; }
+  @media (max-width: 767px) {
+    body {
+      padding: 20px 20px 20px 20px;
+      height: calc(100% - 40px); } }
+  @media (min-width: 768px) {
+    body {
+      padding: 40px 60px 60px 60px;
+      height: calc(100% - 100px); } }
+
+.backgroundFilter {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: fixed;
+  background-color: #0c0d0c;
+  background-attachment: fixed; }
+
+header {
+  margin: 0 auto;
+  text-align: center; }
+
+h1 {
+  color: #fff;
+  font-family: "Source Code Pro", sans-serif;
+  font-weight: bold;
+  font-size: 5em;
+  margin: 0 auto; }
+  h1:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    -webkit-transition: border-color 500ms ease-in-out;
+            transition: border-color 500ms ease-in-out; }
+
+.homeLink {
+  font-family: "Source Code Pro", sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 2em; }

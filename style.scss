@@ -1,0 +1,212 @@
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$hdpi-width: 1600px;
+$mobile: "(max-width: #{$tablet-width - 1px})";
+$tablet: "(min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})";
+$desktop: "(min-width: #{$desktop-width}) and (max-width: #{$hdpi-width - 1px})";
+$hdpi: "(min-width: #{$hdpi-width})";
+$hdpi-desktop-tablet: "(min-width: #{$tablet-width})";
+$desktop-tablet: "(min-width: #{$tablet-width}) and (max-width: #{$hdpi-width - 1px})";
+$hdpi-desktop: "(min-width: #{$desktop-width})";
+$themeColor: #fff;
+$globalFont: 'Arvo', serif;
+$headingFont: 'Source Code Pro', sans-serif;
+
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700);
+@import url(../bower_components/normalize-css/normalize.css);
+
+html {
+	height: 100%;
+}
+
+body {
+	@media #{$mobile} {
+		padding: 20px 20px 20px 20px;
+		height: calc(100% - 40px);
+	}
+	@media #{$hdpi-desktop-tablet} {
+		padding: 40px 60px 60px 60px;
+		height: calc(100% - 100px);
+	}
+}
+
+.backgroundFilter {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	filter: saturate(150%) brightness(0.90);
+	@media #{$mobile} {
+		filter: brightness(0.8);
+	}
+	z-index: -1;
+	position: fixed;
+	background-size: cover;
+	background-image: url(../images/brisbaneStoryBridge.jpg);
+	background-repeat: none;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.textualLink {
+	color: $themeColor;
+	text-decoration: none;
+	border-bottom: 2px solid white;
+	transition: border-color 500ms ease-in-out;
+	&:hover {
+		border-color: rgba(255, 255, 255, 0.5);
+		transition: border-color 500ms ease-in-out;
+	}
+}
+
+header {
+	margin: 0 auto 0 auto;
+	text-align: center;
+	max-width: 880px;
+	font-family: $headingFont;
+	text-transform: uppercase;
+
+	@media #{$mobile} {
+		padding-top: 10px;
+		a {
+			font-size: 2.4em;
+		}
+	}
+	@media #{$tablet} {
+		padding-top: 20px;
+		a {
+			font-size: 3em;
+		}
+	}
+	@media #{$desktop} {
+		padding-top: 20px;
+		a {
+			font-size: 4.5em;
+		}
+	}
+	@media #{$hdpi} {
+		padding-top: 40px;
+		a {
+			font-size: 4.8em;
+		}
+	}
+}
+
+ul {
+	list-style: none;
+	margin: 0 auto 0 auto;
+	padding: 0;
+	text-align: center;
+	max-width: 880px;
+	@media #{$hdpi} {
+		max-width: 1280px;
+	}
+}
+
+.mainLinks {
+	@media #{$mobile} {
+		// padding-top: 10%;
+	}
+	@media #{$tablet} {
+		// padding-top: 20%;
+	}
+	@media #{$desktop} {
+		margin-top: 20%;
+	}
+	@media #{$hdpi} {
+		margin-top: 15%;
+	}
+	.link {
+		a {
+			font-family: $headingFont;
+		}
+		@media #{$mobile} {
+			padding: 20px;
+			display: block;
+			a {
+				font-size: 1.4em;
+			}
+		}
+		@media #{$tablet} {
+			padding: 35px 30px;
+			display: block;
+			a {
+				font-size: 1.8em;
+			}
+		}
+		@media #{$desktop} {
+			padding: 0 50px;
+			display: inline-block;
+			a {
+				font-size: 2.2em;
+			}
+		}
+		@media #{$hdpi} {
+			padding: 0 80px;
+			display: inline-block;
+			a {
+				font-size: 2.8em;
+			}
+		}
+	}
+}
+
+.footerLinks {
+	margin: 0 auto;
+	position: fixed;
+	margin: auto;
+	max-width: 880px;
+	@media #{$mobile} {
+		bottom: 40px;
+		left: 20px;
+		right: 20px;
+	}
+	@media #{$tablet} {
+		bottom: 40px;
+		left: 60px;
+		right: 60px;
+	}
+	@media #{$hdpi-desktop} {
+		bottom: 40px;
+		left: 60px;
+		right: 60px;
+	}
+	.footerLink {
+		margin: 0 1% 0 1%;
+		display: inline-block;
+		border: 1px solid $themeColor;
+		border-radius: 50%;
+		width: 44px;
+		height: 44px;
+		@media #{$desktop} {
+			width: 66px;
+			height: 66px;
+		}
+		@media #{$hdpi} {
+			width: 88px;
+			height: 88px;
+		}
+		transition: .5s;
+		&:hover {
+			background-color: black;
+			transition: .5s;
+		}
+		.linkWrapper {
+			// width: 44px;
+			// height: 44px;
+			cursor: pointer;
+			.socialIcon path {
+				fill: $themeColor;
+				transition: .5s;
+			}
+		}
+	}
+}
+
+footer {
+	color: $themeColor;
+	position: fixed;
+	bottom: 0;
+}
+
