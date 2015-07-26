@@ -9,10 +9,10 @@ $hdpi-desktop-tablet: "(min-width: #{$tablet-width})";
 $desktop-tablet: "(min-width: #{$tablet-width}) and (max-width: #{$hdpi-width - 1px})";
 $hdpi-desktop: "(min-width: #{$desktop-width})";
 $themeColor: #fff;
+$hoverTransparency: 0.8;
 $globalFont: 'Arvo', serif;
 $headingFont: 'Source Code Pro', sans-serif;
 
-@import url(http://fonts.googleapis.com/css?family=Arvo:400,700,400italic);
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700);
 @import url(../bower_components/normalize-css/normalize.css);
 
@@ -53,10 +53,10 @@ body {
 	color: $themeColor;
 	text-decoration: none;
 	border-bottom: 2px solid white;
-	transition: border-color 500ms ease-in-out;
+	transition: border-color 750ms ease-in-out;
 	&:hover {
-		border-color: rgba(255, 255, 255, 0.5);
-		transition: border-color 500ms ease-in-out;
+		border-color: transparentize($themeColor, $hoverTransparency);
+		transition: border-color 750ms ease-in-out;
 	}
 }
 
@@ -158,12 +158,12 @@ ul {
 	margin: auto;
 	max-width: 880px;
 	@media #{$mobile} {
-		bottom: 40px;
+		bottom: 20px;
 		left: 20px;
 		right: 20px;
 	}
 	@media #{$tablet} {
-		bottom: 40px;
+		bottom: 20px;
 		left: 60px;
 		right: 60px;
 	}
@@ -189,8 +189,8 @@ ul {
 		}
 		transition: .5s;
 		&:hover {
-			background-color: black;
-			transition: .5s;
+			background-color: transparentize($themeColor, $hoverTransparency);
+			transition: background-color 750ms ease-in-out;
 		}
 		.linkWrapper {
 			// width: 44px;
@@ -198,9 +198,22 @@ ul {
 			cursor: pointer;
 			.socialIcon path {
 				fill: $themeColor;
-				transition: .5s;
+				transition: fill 1000ms ease-out;
 			}
 		}
+	}
+}
+
+#bottomPadding {
+	width: 100%;
+	@media #{$hdpi-desktop} {
+		height: 88px + 40px;
+	}
+	@media #{$mobile} {
+		height: 88px + 20px;
+	}
+	@media #{$tablet} {
+		height: 88px + 20px;
 	}
 }
 
