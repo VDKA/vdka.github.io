@@ -167,10 +167,28 @@ ul {
       height: 128px; } }
   @media (max-width: 767px) {
     #bottomPadding {
-      height: 108px; } }
+      height: 64px; } }
   @media (min-width: 768px) and (max-width: 1023px) {
     #bottomPadding {
-      height: 108px; } }
+      height: 86px; } }
+
+#bottomGradient {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  z-index: -1; }
+  @media (min-width: 1024px) {
+    #bottomGradient {
+      height: 40px; } }
+  @media (max-width: 767px) {
+    #bottomGradient {
+      height: 20px; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #bottomGradient {
+      height: 20px; } }
 
 footer {
   color: #fff;

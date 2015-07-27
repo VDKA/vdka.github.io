@@ -210,10 +210,28 @@ ul {
 		height: 88px + 40px;
 	}
 	@media #{$mobile} {
-		height: 88px + 20px;
+		height: 44px + 20px;
 	}
 	@media #{$tablet} {
-		height: 88px + 20px;
+		height: 66px + 20px;
+	}
+}
+
+#bottomGradient {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.5) , transparent);
+	z-index: -1;
+	@media #{$hdpi-desktop} {
+		height: 40px;
+	}
+	@media #{$mobile} {
+		height: 20px;
+	}
+	@media #{$tablet} {
+		height: 20px;
 	}
 }
 
