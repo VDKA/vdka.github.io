@@ -1,23 +1,8 @@
-$tablet-width: 768px;
-$desktop-width: 1024px;
-$hdpi-width: 1600px;
-$mobile: "(max-width: #{$tablet-width - 1px})";
-$tablet: "(min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})";
-$desktop: "(min-width: #{$desktop-width}) and (max-width: #{$hdpi-width - 1px})";
-$hdpi: "(min-width: #{$hdpi-width})";
-$hdpi-desktop-tablet: "(min-width: #{$tablet-width})";
-$desktop-tablet: "(min-width: #{$tablet-width}) and (max-width: #{$hdpi-width - 1px})";
-$hdpi-desktop: "(min-width: #{$desktop-width})";
-$themeColor: #fff;
-$hoverTransparency: 0.8;
-$globalFont: 'Arvo', serif;
-$headingFont: 'Source Code Pro', sans-serif;
+@import "globalStyle";
 
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700);
-@import url(../bower_components/normalize-css/normalize.css);
-
-html {
+html, body {
 	height: 100%;
+	margin: 0;
 }
 
 body {
@@ -49,14 +34,14 @@ body {
 	background-attachment: fixed;
 }
 
-.textualLink {
-	color: $themeColor;
+.linkHoverStyle {
 	text-decoration: none;
-	border-bottom: 2px solid white;
-	transition: border-color 750ms ease-in-out;
+	border-bottom: 2px solid $themeWhite;
+	transition: all 1s ease-in-out;
 	&:hover {
-		border-color: transparentize($themeColor, $hoverTransparency);
-		transition: border-color 750ms ease-in-out;
+		color: lighten($themeWhite, 20%);
+		border-color: transparentize($themeWhite, 0.6);
+		transition: all 1s ease-out;
 	}
 }
 
@@ -64,30 +49,28 @@ header {
 	margin: 0 auto 0 auto;
 	text-align: center;
 	max-width: 880px;
-	font-family: $headingFont;
 	text-transform: uppercase;
-
 	@media #{$mobile} {
 		padding-top: 10px;
-		a {
+		h1 {
 			font-size: 2.4em;
 		}
 	}
 	@media #{$tablet} {
 		padding-top: 20px;
-		a {
+		h1 {
 			font-size: 3em;
 		}
 	}
 	@media #{$desktop} {
 		padding-top: 20px;
-		a {
+		h1 {
 			font-size: 4.5em;
 		}
 	}
 	@media #{$hdpi} {
 		padding-top: 40px;
-		a {
+		h1 {
 			font-size: 4.8em;
 		}
 	}
@@ -105,12 +88,6 @@ ul {
 }
 
 .mainLinks {
-	@media #{$mobile} {
-		// padding-top: 10%;
-	}
-	@media #{$tablet} {
-		// padding-top: 20%;
-	}
 	@media #{$desktop} {
 		margin-top: 20%;
 	}
@@ -118,9 +95,6 @@ ul {
 		margin-top: 15%;
 	}
 	.link {
-		a {
-			font-family: $headingFont;
-		}
 		@media #{$mobile} {
 			padding: 20px;
 			display: block;
@@ -175,7 +149,7 @@ ul {
 	.footerLink {
 		margin: 0 1% 0 1%;
 		display: inline-block;
-		border: 1px solid $themeColor;
+		border: 1px solid $themeWhite;
 		border-radius: 50%;
 		width: 44px;
 		height: 44px;
@@ -189,15 +163,14 @@ ul {
 		}
 		transition: .5s;
 		&:hover {
-			background-color: transparentize($themeColor, $hoverTransparency);
-			transition: background-color 750ms ease-in-out;
+			background-color: transparentize($themeWhite, $hoverTransparency);
+			transition: background-color 1000ms ease-in-out;
+			transform: scale(1.2);
 		}
 		.linkWrapper {
-			// width: 44px;
-			// height: 44px;
 			cursor: pointer;
 			.socialIcon path {
-				fill: $themeColor;
+				fill: $themeWhite;
 				transition: fill 1000ms ease-out;
 			}
 		}
@@ -234,10 +207,3 @@ ul {
 		height: 20px;
 	}
 }
-
-footer {
-	color: $themeColor;
-	position: fixed;
-	bottom: 0;
-}
-

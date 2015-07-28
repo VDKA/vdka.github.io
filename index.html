@@ -3,8 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Ethan Jackwitz</title>
-		<link rel="stylesheet" href="css/style.css">
+		<!-- favicon jargon -->
 		<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
@@ -22,17 +21,26 @@
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
 		<meta name="theme-color" content="#ffffff">
+		<!-- end favicon jargon -->
+
+		<title>Ethan Jackwitz</title>
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/loadingScreen.js"></script>
 	</head>
 	<body>
+		<div id="loading">
+			<h1 class="globalFont">Loading...</h1>
+		</div>
 		<div class="backgroundFilter"></div>
 		<header>
-			<a class="textualLink" href="#">Ethan Jackwitz</a>
+			<h1 class="globalFont primaryColorHeader">Ethan Jackwitz</h1>
 		</header>
 		<ul class="mainLinks">
-			<li class="link"><a class="textualLink" href="/underconstruction.html">About</a></li>
-			<li class="link"><a class="textualLink" href="/underconstruction.html">Work</a></li>
-			<li class="link"><a class="textualLink" href="/underconstruction.html">Resume</a></li>
-			<li class="link"><a class="textualLink" href="/underconstruction.html">Contact</a></li>
+			<li class="link"><a class="globalFont primaryColor linkHoverStyle" href="/underconstruction.html">About</a></li>
+			<li class="link"><a class="globalFont primaryColor linkHoverStyle" href="/underconstruction.html">Work</a></li>
+			<li class="link"><a class="globalFont primaryColor linkHoverStyle" href="/underconstruction.html">Resume</a></li>
+			<li class="link"><a class="globalFont primaryColor linkHoverStyle" href="/underconstruction.html">Contact</a></li>
 		</ul>
 		<ul class="footerLinks">
 			<li class="footerLink">
@@ -67,5 +75,4 @@
 		</ul>
 		<div id="bottomPadding"></div>
 		<div id="bottomGradient"></div>
-		<!-- <footer><small>&copy; Me 2015</small></footer> -->
 	</body>

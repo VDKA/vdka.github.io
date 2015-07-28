@@ -1,0 +1,1 @@
+var fadeLoading=function(){$("#loading h1").fadeOut(1e3),$("#loading").fadeOut(3e3)};$(window).load(fadeLoading);
