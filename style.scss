@@ -89,10 +89,10 @@ ul {
 
 .mainLinks {
 	@media #{$desktop} {
-		margin-top: 20%;
+		margin-top: 18%;
 	}
 	@media #{$hdpi} {
-		margin-top: 15%;
+		margin-top: 10%;
 	}
 	.link {
 		@media #{$mobile} {

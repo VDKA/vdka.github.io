@@ -116,10 +116,10 @@ ul {
 
 @media (min-width: 1024px) and (max-width: 1599px) {
   .mainLinks {
-    margin-top: 20%; } }
+    margin-top: 18%; } }
 @media (min-width: 1600px) {
   .mainLinks {
-    margin-top: 15%; } }
+    margin-top: 10%; } }
 @media (max-width: 767px) {
   .mainLinks .link {
     padding: 20px;
