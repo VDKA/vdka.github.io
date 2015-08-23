@@ -4,71 +4,205 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- favicon jargon -->
-		<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
-		<link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
-		<link rel="manifest" href="/favicon/manifest.json">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/images/favicon/favicon-194x194.png" sizes="194x194">
+		<link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/images/favicon/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/images/favicon/manifest.json">
+		<link rel="shortcut icon" href="/images/favicon/favicon.ico">
+		<meta name="msapplication-TileColor" content="#dddddd">
+		<meta name="msapplication-TileImage" content="/images/favicon/mstile-144x144.png">
+		<meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
 		<meta name="theme-color" content="#ffffff">
 		<!-- end favicon jargon -->
-
 		<title>Ethan Jackwitz</title>
 		<link rel="stylesheet" href="/css/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="/bower_components/gsap/src/minified/TimelineMax.min.js"></script>
+		<script type="text/javascript" src="/bower_components/gsap/src/minified/TweenMax.min.js"></script>
 		<script async type="text/javascript" src="/js/min/loadingScreen-min.js"></script>
 	</head>
-	<body onload="fadeLoadingScreen();">
-		<div id="loading">
-			<h1 class="globalFont">Loading...</h1>
+	<body onload="finishLoadingAnimation();">
+		<div id="loadingScreen">
+			<div id="logo">
+				<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+					<g fill="none" fill-rule="evenodd">
+						<path id="logoBorder" stroke="#F4F4F4" stroke-width="3" d="M149.5 75.4L75.1 150 .67 75.4 75.07.8l74.43 74.6z"/>
+						<path id="logoLetters" fill="#F4F4F4" d="M58.4 77.05v-3.32l10.02-11.6-10-13.3v-2.48H77.6v3.32H63.4l9.2 12.45-9.2 11.6h15.02v3.33h-20zm33.36-3.32H78.42v3.32h9.17v16.6c.12 4.74-2.4 7.63-6.7 7.47-2.2.16-4.53-.28-7.5-2.5l-1.67 2.5c2.56 2.36 5.72 3.32 9.17 3.32 8.34 0 10.85-5.53 10.85-10.8v-19.9z"/>
+					</g>
+				</svg>
+			</div>
+			<div id="loadingLines">
+				<span id="leftLine" class="loadingLine"></span>
+				<span id="loadingText">Loading</span>
+				<span id="rightLine" class="loadingLine"></span>
+			</div>
 		</div>
-		<div class="backgroundFilter"></div>
-		<header>
-			<h1 class="globalFont primaryColorHeader">Ethan Jackwitz</h1>
-		</header>
-		<ul class="mainLinks">
-			<li class="link"><a class="globalFont primaryColor linkHoverStyle" href="http://blog.ejackwitz.com">Blog</a></li>
-		</ul>
-		<ul class="footerLinks">
-			<li class="footerLink">
-				<a class="linkWrapper" id="facebookIcon" href="https://facebook.com/ejackwitz">
-					<svg class="socialIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44 44">
-						<path d="M23.3147057,35 L18.4372418,35 L18.4372418,23.4985483 L16,23.4985483 L16,19.535534 L18.4372418,19.535534 L18.4372418,17.1562737 C18.4372418,13.9234411 19.8127074,12 23.7230238,12 L26.9776468,12 L26.9776468,15.964466 L24.9435074,15.964466 C23.4212558,15.964466 23.3206665,16.5182719 23.3206665,17.5518493 L23.3139606,19.535534 L27,19.535534 L26.5685836,23.4985483 L23.3139606,23.4985483 L23.3139606,35 L23.3147057,35 Z" id="Shape" fill="#000" sketch:type="MSShapeGroup"></path>
-					</svg>
-				</a>
-			</li>
-			<li class="footerLink">
-				<a class="linkWrapper" id="twitterIcon" href="https://twitter.com/EthanJackwitz">
-					<svg class="socialIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44 44">
-						<path d="M30.526149,16.8457316 C31.4160944,16.2841254 32.0989611,15.3936155 32.41944,14.3328037 C31.5861948,14.8541095 30.6654341,15.2311137 29.6830428,15.4352159 C28.899102,14.5512061 27.7786582,14 26.5386512,14 C24.1597112,14 22.231907,16.0345226 22.231907,18.5435505 C22.231907,18.8997544 22.2676528,19.2468583 22.3416094,19.578362 C18.762106,19.3885599 15.5881317,17.5815398 13.4618771,14.8307092 C13.0908611,15.5041167 12.8788519,16.2841254 12.8788519,17.1161346 C12.8788519,18.6917521 13.6393731,20.0827676 14.7955626,20.8991767 C14.0892763,20.8757764 13.4248987,20.6690741 12.8431062,20.3310703 L12.8431062,20.386971 C12.8431062,22.5891954 14.3271703,24.4261158 16.3005811,24.8421205 C15.9381933,24.9487217 15.558549,25.0020222 15.1641134,25.0020222 C14.8867758,25.0020222 14.6156013,24.9747219 14.3542877,24.9214213 C14.9015672,26.7258414 16.4928685,28.041456 18.3787639,28.0765564 C16.9033281,29.29597 15.0457827,30.021378 13.0279979,30.021378 C12.6804015,30.021378 12.3365029,30.0018778 12,29.9589773 C13.9068498,31.2472916 16.1711569,32 18.6043317,32 C26.5300229,32 30.8614193,25.0761231 30.8614193,19.0713563 C30.8614193,18.8737542 30.858954,18.677452 30.8503258,18.4837498 C31.6921993,17.8428427 32.4243705,17.0420338 33,16.1307237 C32.2271527,16.4921277 31.3963726,16.7365304 30.526149,16.8457316 Z" id="Shape" fill="#000" sketch:type="MSShapeGroup"></path>
-					</svg>
-				</a>
-			</li>
-			<li class="footerLink">
-				<a class="linkWrapper" id="githubIcon" href="https://github.com/VDKA">
-					<svg class="socialIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44 44">
-						<path d="M10,22.3044338 C10,27.7398363 13.4380429,32.3519218 18.2065134,33.9789169 C18.8069002,34.0922174 19.0256914,33.7122831 19.0256914,33.3859777 C19.0256914,33.0936624 19.015378,32.3201977 19.0094846,31.2936952 C15.671629,32.0369464 14.9673716,29.6440399 14.9673716,29.6440399 C14.4214985,28.2224964 13.634734,27.8440727 13.634734,27.8440727 C12.5451978,27.0804274 13.7172412,27.0962895 13.7172412,27.0962895 C14.921698,27.1831532 15.555235,28.3644997 15.555235,28.3644997 C16.6263544,30.2445326 18.364161,29.7014455 19.0477915,29.3864702 C19.1568188,28.5911007 19.4669572,28.0495243 19.8095092,27.741347 C17.1449707,27.4309036 14.3434114,26.3756983 14.3434114,21.660887 C14.3434114,20.3171431 14.8111974,19.2188837 15.5788084,18.3585552 C15.4557844,18.0473565 15.0439854,16.7965191 15.6966758,15.1030543 C15.6966758,15.1030543 16.7044415,14.7714615 18.9962246,16.3637112 C19.9538967,16.0910346 20.9800792,15.9543187 22.0003683,15.9497867 C23.0199208,15.9543187 24.0461033,16.0910346 25.0052488,16.3637112 C27.2955585,14.7714615 28.3018509,15.1030543 28.3018509,15.1030543 C28.9560146,16.7965191 28.5442156,18.0473565 28.4211916,18.3585552 C29.1902759,19.2188837 29.6543786,20.3171431 29.6543786,21.660887 C29.6543786,26.3870284 26.8491359,27.4271269 24.1757574,27.7322829 C24.6067098,28.1122172 24.9897787,28.8630219 24.9897787,30.0103782 C24.9897787,31.6555014 24.9757819,32.9826279 24.9757819,33.3859777 C24.9757819,33.7153044 25.1916265,34.0975048 25.8008533,33.9774062 C30.5649038,32.3473898 34,27.7390809 34,22.3044338 C34,15.5086701 28.6267227,10 21.998895,10 C15.3732773,10 10,15.5086701 10,22.3044338 Z" id="Shape" fill="#000" sketch:type="MSShapeGroup"></path>
-					</svg>
-				</a>
-			</li>
-			<li class="footerLink">
-				<a class="linkWrapper" id="emailIcon" href="mailto:ethanjackwitz@gmail.com?Subject=From%20Website" target="_top">
-					<svg class="socialIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44 44">
-						<path d="M13.1115479,18.9319176 C13.389863,19.1136566 14.228726,19.6535732 15.6282877,20.5512492 C17.0278493,21.4489252 18.0999726,22.1401747 18.8448082,22.6248583 C18.9266301,22.6779992 19.1005205,22.7934864 19.3664795,22.9714595 C19.6324384,23.149572 19.8534932,23.293652 20.0293425,23.4034207 C20.2053425,23.5131893 20.4181096,23.6363478 20.6677945,23.7726171 C20.9174795,23.9088864 21.1528493,24.0112628 21.3737534,24.0791882 C21.5948082,24.1475321 21.7994384,24.1814251 21.9876438,24.1814251 L22,24.1814251 L22.0123562,24.1814251 C22.2005616,24.1814251 22.4051918,24.1475321 22.6262466,24.0791882 C22.8471507,24.0112628 23.0826712,23.908747 23.3322055,23.7726171 C23.5817397,23.6362083 23.7945068,23.5131893 23.9705068,23.4034207 C24.1465068,23.293652 24.367411,23.149572 24.6333699,22.9714595 C24.8993288,22.7933469 25.0733699,22.6779992 25.1551918,22.6248583 C25.9080137,22.1400352 27.8233699,20.9090085 30.9006575,18.9316387 C31.4981233,18.545426 31.9971918,18.0794323 32.3983151,17.5339366 C32.799589,16.9887198 33,16.4167233 33,15.8182262 C33,15.3182 32.8054658,14.8901442 32.4166986,14.5340586 C32.0279315,14.177973 31.5674384,14 31.0356712,14 L12.9641781,14 C12.3340137,14 11.8491096,14.196942 11.5094658,14.5908259 C11.1698219,14.9848493 11,15.4773437 11,16.0681695 C11,16.5454609 11.2251233,17.0626427 11.6752192,17.6194362 C12.1253151,18.1762296 12.6041918,18.6137699 13.1115479,18.9319176 Z M31.7722192,20.1477413 C29.0879178,21.8294193 27.0497534,23.1363216 25.6586301,24.0681695 C25.1921096,24.3863173 24.813589,24.6345869 24.5229178,24.8124205 C24.2323973,24.990533 23.8457397,25.1722719 23.3627945,25.3579162 C22.88,25.5435605 22.4299041,25.6363129 22.0125068,25.6363129 L22,25.6363129 L21.9876438,25.6363129 C21.5702466,25.6363129 21.12,25.5435605 20.6372055,25.3579162 C20.154411,25.1722719 19.7676027,24.990533 19.4770822,24.8124205 C19.1865616,24.6345869 18.8080411,24.3863173 18.3415205,24.0681695 C17.2365479,23.3182 15.2027534,22.0112977 12.2399863,20.1477413 C11.7734658,19.8599997 11.360137,19.5302753 11,19.1591262 L11,28.1816343 C11,28.6818 11.192274,29.1097163 11.5769726,29.4658019 C11.9616712,29.822027 12.4241233,30 12.9643288,30 L31.0358219,30 C31.5758767,30 32.0383288,29.822027 32.4230274,29.4658019 C32.8078767,29.1095769 33,28.6818 33,28.1816343 L33,19.1591262 C32.648,19.522604 32.2388904,19.8523284 31.7722192,20.1477413 Z" id="Shape" fill="#000" sketch:type="MSShapeGroup"></path>
-					</svg>
-				</a>
-			</li>
 
-		</ul>
-		<div id="bottomPadding"></div>
-		<div id="bottomGradient"></div>
+		<div id="content">
+			<div class="mastImage"></div>
+			<header>
+				<div class="wrap">
+					<object class="logo" type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiB2aWV3Qm94PSIwIDAgMTUwIDE1MCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBzdHJva2U9IiNGNEY0RjQiIHN0cm9rZS13aWR0aD0iMyIgZD0iTTE0OS41IDc1LjRMNzUgMTUwIC44IDc1LjQgNzUgLjhsNzQuNSA3NC42eiIvPjxwYXRoIGZpbGw9IiNGNEY0RjQiIGQ9Ik01OC40IDc3di0zLjNsMTAtMTEuNi0xMC0xMy4ydi0yLjVoMTkuMnYzLjRINjMuNEw3Mi42IDYybC05LjIgMTEuN2gxNVY3N2gtMjB6bTMzLjQtMy4zSDc4LjRWNzdoOS4ydjE2LjdjMCA0LjctMi40IDcuNi02LjcgNy40LTIuMy4zLTQuNi0uMi03LjYtMi40bC0xLjYgMi41YzIuNSAyLjUgNS43IDMuNCA5IDMuNCA4LjUgMCAxMS01LjUgMTEtMTAuN3YtMjB6Ii8+PC9nPjwvc3ZnPg=="></object>
+				</div>
+				<div class="wrap titles">
+					<span class="title">Ethan Jackwitz</span>
+					<span class="subTitle">Software Engineer</span>
+				</div>
+				<div class="wrap buttons">
+					<div class="headerButton blogButton">
+						<a href="http://blog.ejackwitz.com">Blog</a>
+					</div>
+					<div class="headerButton resumeButton">
+						<a href="http://ejackwitz.com/EthanJackwitz-Resume.pdf">Resume (PDF)</a>
+					</div>
+				</div>
+				<div class="profileImage"></div>
+			</header>
+			<main>
+				<section class="bgBlock brief">
+					<div class="humbleBrag user">
+						<object class="userIcon" type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDMiIGhlaWdodD0iNDMiIHZpZXdCb3g9IjAgMCA0MyA0MyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMiA0MC44YzEuNS02LjUgOS03IDEwLjUtNy44IDIuOC0xLjMgNC0zLjUgNC4yLTUuNC0xLjgtMS43LTMuMi00LjItNC03LTEuMy0xLjUtMi0zLjItMi00LjUgMC0xIC4zLTEgMS0yIC4zLTYgNC41LTEyIDkuNy0xMmguMmM1LjIgMCA5LjQgNiA5LjYgMTMgLjUgMSAuNyAxIC43IDJzLTEgMy0yIDRjLTEgMy0zIDYtNSA4IDAgMiAxIDQgNCA1LjcgMS40LjggOSAxIDEwLjMgNy41IiBzdHJva2U9IiMxRkQ1ODIiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIi8+PC9zdmc+DQo="></object>
+						<h1 class="hBTitle">User Oriented.</h1>
+						<p class="hBContent">Beautiful responsive interfaces. <br> Familiar logical navigation. <br> Direct immediate feedback. <br> I work to make a user's experience unique and special. During development I make sure to keep this goal in mind.</p>
+					</div>
+					<div class="humbleBrag middle">
+						<object class="innovativeIcon" type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzEiIGhlaWdodD0iNDMiIHZpZXdCb3g9IjAgMCAzMSA0MyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTQuOCAyOS41bDUuMyAxLjJzMSAuNCAxLS44di0uNWMwLTEuNC43LTIgMy00LjcgMi41LTIgNS00LjggNS0xMCAwLTgtNi42LTEzLTEzLjMtMTNDOC43IDIgMiA3LjIgMiAxNWMwIDUgMi41IDguMyA0LjggMTAgMi42IDMgMi44IDMuNSAyLjggNXYuN2MwIC43IDAgMS4zLjcgMS41bDEwLjMgMi4ybS0xMC4zIDEuMmwxMC4yIDIuMk0xMSAzOWw4LjIgMS43IiBzdHJva2U9IiMxRkQ1ODIiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIi8+PC9zdmc+DQo="></object>
+						<h1 class="hBTitle">Adaptive.</h1>
+						<p class="hBContent"> I ensure I am up to date with the most recent developments in the software domain. I am a quick learner and will rapidly adapt to emerging and leading technologies.</p>
+					</div>
+					<div class="humbleBrag">
+						<object class="adaptiveIcon" type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI4IDQwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iIzFGRDU4MiI+PHBhdGggc3Ryb2tlLXdpZHRoPSIzIiBkPSJNMCAwaDI4djQwSDB6Ii8+PHBhdGggZD0iTTE1IDloOXYxMWgtOXoiLz48cGF0aCBzdHJva2Utd2lkdGg9IjIiIGQ9Ik01IDZoMThNNSAxMGg3IiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIi8+PHBhdGggZD0iTTQuNSAxMy41aDhtLTggM2g4bS04IDNoOG0tOCAzaDE5bS0xOSAzaDE5bS0xOSAzaDE5IiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIi8+PHBhdGggZD0iTTQgMzFoMjB2NEg0eiIvPjwvZz48L3N2Zz4="></object>
+						<h1 class="hBTitle">Detail Oriented.</h1>
+						<p class="hBContent">Attention to detail. <br> Detailed documentation. <br> Consistency of experience. <br> I am familiar with carefully testing detail specific implementations, both in my own work and in the work of others.</p>
+					</div>
+				</section>
+
+				<hgroup class="sectionHeader"><h1>Experience</h1></hgroup>
+				<section class="bgBlock">
+					<div class="experience">
+						<div class="tLine">
+							<div class="line"></div>
+							<div class="midYear midLeft"></div>
+							<div class="year t14"><span>2014</span></div>
+							<div class="midYear midMid"></div>
+							<div class="year t15"><span>2015</span></div>
+							<div class="midYear midRight"></div>
+						</div>
+						<div class="time">
+							<div class="lBlock lbJava">Java</div>
+							<div class="lBlock lbMatlab">Matlab</div>
+							<div class="lBlock lbAsm">asm</div>
+							<div class="lBlock lbC">C &amp; UNIX</div>
+							<div class="lBlock lbObjC">Obj-C</div>
+							<div class="lBlock lbGit">git</div>
+							<div class="lBlock lbSwift">Swift</div>
+							<div class="lBlock lbHTMLCSS">HTML &amp; CSS</div>
+							<div class="lBlock lbJavascript">Javascript</div>
+							<div class="gpaText">My Current GPA: 5.4</div>
+							<div class="lBlock gpaOuterBlock">
+								<div class="gpaInnerBlock"></div>
+							</div>
+						</div>
+						<div class="center"><p class="nonExhaustive">*Not an exhaustive list.</p></div>
+					</div>
+				</section>
+				<hgroup class="sectionHeader"><h1>Platforms</h1></hgroup>
+				<section class="bgBlock platforms">
+					<div class="wrap leftWrap">
+						<div class="outerScale">
+							<object class="web" type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNMTUwIDMwMGM4Mi44IDAgMTUwLTY3LjIgMTUwLTE1MFMyMzIuOCAwIDE1MCAwIDAgNjcuMiAwIDE1MHM2Ny4yIDE1MCAxNTAgMTUwem03NS0xNTBjMC00MS40LTMzLjYtNzUtNzUtNzVzLTc1IDMzLjYtNzUgNzUgMzMuNiA3NSA3NSA3NSA3NS0zMy42IDc1LTc1eiIvPjwvZGVmcz48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxtYXNrIGlkPSJiIiBmaWxsPSIjZmZmIj48dXNlIHhsaW5rOmhyZWY9IiNhIi8+PC9tYXNrPjx1c2UgZmlsbD0iIzUwNTE0RiIgeGxpbms6aHJlZj0iI2EiLz48cGF0aCBmaWxsPSIjMUZENTgyIiBkPSJNMCAxODUuMmgzMDBWMzAwSDB6IiBtYXNrPSJ1cmwoI2IpIi8+PHRleHQgZmlsbD0iIzUwNTE0RiIgZm9udC1mYW1pbHk9Ik9wZW4gU2FucyIgZm9udC1zaXplPSIyNCI+PHRzcGFuIHg9IjExNy4xIiB5PSIxMTgiPkhUTUw8L3RzcGFuPiA8dHNwYW4geD0iMTI4LjkiIHk9IjE1MSI+Q1NTPC90c3Bhbj4gPHRzcGFuIHg9IjEzOS45IiB5PSIxODQiPkpTPC90c3Bhbj48L3RleHQ+PC9nPjwvc3ZnPg0K"></object>
+						</div>
+						<div class="words">
+							<h1>Web</h1>
+							<h2>Webpages &amp; Online Systems</h2>
+							<pre>Familiar with online technology, frameworks,
+	use-patterns and design.</pre>
+						</div>
+					</div>
+					<div class="wrap midWrap">
+						<div class="midScale">
+							<object class="mobile" type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNTAiIGhlaWdodD0iMzUwIiB2aWV3Qm94PSIwIDAgMzUwIDM1MCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNMTc1IDM1MGM5Ni42IDAgMTc1LTc4LjQgMTc1LTE3NVMyNzEuNiAwIDE3NSAwIDAgNzguNCAwIDE3NXM3OC40IDE3NSAxNzUgMTc1em0wLTg3LjVjNDguMyAwIDg3LjUtMzkuMiA4Ny41LTg3LjVTMjIzLjMgODcuNSAxNzUgODcuNSA4Ny41IDEyNi43IDg3LjUgMTc1czM5LjIgODcuNSA4Ny41IDg3LjV6Ii8+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PG1hc2sgaWQ9ImIiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L21hc2s+PHVzZSBmaWxsPSIjNTA1MTRGIiB4bGluazpocmVmPSIjYSIvPjxwYXRoIGZpbGw9IiMxRkQ1ODIiIGQ9Ik0wIDU4LjNoMzUwVjM1MEgweiIgbWFzaz0idXJsKCNiKSIvPjx0ZXh0IGZpbGw9IiM1MDUxNEYiIGZvbnQtZmFtaWx5PSJPcGVuIFNhbnMiIGZvbnQtc2l6ZT0iMzYiPjx0c3BhbiB4PSIxNDYuNCIgeT0iMTI3Ij5pT1M8L3RzcGFuPiA8dHNwYW4geD0iMTMzLjkiIHk9IjE3NiI+U3dpZnQ8L3RzcGFuPiA8dHNwYW4geD0iMTI4LjEiIHk9IjIyNSI+T2JqLUM8L3RzcGFuPjwvdGV4dD48L2c+PC9zdmc+DQo="></object>
+						</div>
+						<div class="words">
+							<h1>Mobile</h1>
+							<h2>Responsive Systems</h2>
+							<pre>Experience with the design and development
+	of iOS applications in team
+	environments and independently.</pre>
+						</div>
+					</div>
+					<div class="wrap rightWrap">
+						<div class="outerScale">
+							<object class="systems" type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNMTUwIDMwMGM4Mi44IDAgMTUwLTY3LjIgMTUwLTE1MFMyMzIuOCAwIDE1MCAwIDAgNjcuMiAwIDE1MHM2Ny4yIDE1MCAxNTAgMTUwem03NS0xNTBjMC00MS40LTMzLjYtNzUtNzUtNzVzLTc1IDMzLjYtNzUgNzUgMzMuNiA3NSA3NSA3NSA3NS0zMy42IDc1LTc1eiIvPjwvZGVmcz48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxtYXNrIGlkPSJiIiBmaWxsPSIjZmZmIj48dXNlIHhsaW5rOmhyZWY9IiNhIi8+PC9tYXNrPjx1c2UgZmlsbD0iIzUwNTE0RiIgeGxpbms6aHJlZj0iI2EiLz48cGF0aCBmaWxsPSIjMUZENTgyIiBkPSJNMCAxMzEuM2gzMDBWMzAwSDB6IiBtYXNrPSJ1cmwoI2IpIi8+PHRleHQgZmlsbD0iIzUwNTE0RiIgZm9udC1mYW1pbHk9Ik9wZW4gU2FucyIgZm9udC1zaXplPSIyNCI+PHRzcGFuIHg9IjEwNC4zIiB5PSIxMTgiPlN5c3RlbXM8L3RzcGFuPiA8dHNwYW4geD0iMTQyLjkiIHk9IjE1MSI+QzwvdHNwYW4+IDx0c3BhbiB4PSIxMjIuNCIgeT0iMTg0Ij5VTklYPC90c3Bhbj48L3RleHQ+PC9nPjwvc3ZnPg0K"></object>
+						</div>
+						<div class="words">
+							<h1>Desktop</h1>
+							<h2>Operating Systems</h2>
+							<pre>Experienced user of all major desktop
+	environments.
+	Linux | Windows | OSX</pre>
+						</div>
+					</div>
+				</section>
+
+				<hgroup class="sectionHeader"><h1>Contact</h1></hgroup>
+				<section class="bgBlock contact">
+					<div class="center">
+						<p class="topGreet">I would love to hear from you!</p>
+						<div class="shortLogo">
+							<object class="systems" type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NSIgaGVpZ2h0PSIxMzEiIHZpZXdCb3g9IjAgMCA3NSAxMzEiPjxwYXRoIGZpbGw9IiM1MDUxNEYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNjkuNlY2MmwyMi41LTI2TDAgNi4zVi43aDQzVjhIMTEuM0wzMiAzNiAxMSA2MmgzNHY3LjZIMHpNNzUgNjJINDV2Ny42aDIwLjZ2MzcuMmMuNCAxMC42LTUuNCAxNy0xNSAxNi44LTUgLjMtMTAuMi0uNy0xNy01LjZsLTMuNiA1LjZjNS43IDUuMiAxMyA3LjQgMjAuNiA3LjQgMTguOCAwIDI0LjQtMTIuNCAyNC40LTI0LjJWNjJ6Ii8+PC9zdmc+"></object>
+						</div>
+						<div class="center">
+							<strong>I am located in South Brisbane, Queensland.</strong>
+							<p>I am looking for experience in <strong>Brisbane</strong> or on the <strong>Gold Coast</strong>. <br> If you are interested in hearing from me send me an email<br> with the form on the right, or at <strong><a href="mailto:ethanjackwitz@gmail.com?Subject=Website%20Contact" target="_top">ethanjackwitz@gmail.com</a></strong><br> Thanks for visiting!</p>
+						</div>
+					</div>
+					<ul class="smWrap">
+						<li class="smLogo linkedIn">
+							<a class="linkWrapper" href="https://www.linkedin.com/pub/ethan-jackwitz/70/304/a34">
+								<!-- <object type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQgNDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyLjUgMTguNGg0VjMyaC00VjE4LjR6bTItMS43aC0uMmMtMS40IDAtMi4zLTEtMi4zLTIuMyAwLTEuNCAxLTIuNCAyLjQtMi40czIuMyAxIDIuMyAyLjRjMCAxLjMtMSAyLjMtMi4zIDIuM3pNMzIgMzJoLTQuNHYtN2MwLTItLjctMy0yLjItMy0xLjIgMC0xLjguNy0yIDEuNS0uMy4zLS4yLjctLjIgMVYzMmgtNC40VjE4LjRoNC40djJjLjItLjggMS42LTIgNC0yIDIuNiAwIDQuOCAxLjggNC44IDZWMzJ6Ii8+PC9zdmc+DQo="></object> -->
+								<img src="/images/LinkedIn.svg">
+							</a>
+						</li>
+						<li class="smLogo twitter">
+							<a class="linkWrapper" href="http://twitter.com/ejackwitz">
+								<!-- <object type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQgNDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMwLjUzIDE2Ljg1Yy45LS41NyAxLjU3LTEuNDYgMS45LTIuNTItLjg0LjUyLTEuNzYuOS0yLjc1IDEuMS0uNzgtLjg4LTEuOS0xLjQzLTMuMTQtMS40My0yLjM4IDAtNC4zIDIuMDMtNC4zIDQuNTQgMCAuMzYuMDMuNy4xIDEuMDQtMy41OC0uMi02Ljc1LTItOC44OC00Ljc1LS4zNy42Ny0uNTggMS40NS0uNTggMi4zIDAgMS41Ni43NiAyLjk1IDEuOTIgMy43Ny0uNy0uMDItMS4zOC0uMjMtMS45Ni0uNTd2LjA2YzAgMi4yIDEuNSA0IDMuNDYgNC40LS4zNi4xLS43NC4xNi0xLjE0LjE2LS4yNyAwLS41NC0uMDQtLjgtLjEuNTQgMS44IDIuMTMgMy4xMyA0LjAyIDMuMTdDMTYuOSAyOS4zIDE1LjA1IDMwIDEzLjAzIDMwYy0uMzUgMC0uNyAwLTEuMDMtLjA1IDEuOSAxLjMgNC4xNyAyLjA0IDYuNiAyLjA0IDcuOTMgMCAxMi4yNi02Ljk2IDEyLjI2LTEyLjk3di0uNkMzMS43IDE3LjggMzIuNDIgMTcgMzMgMTYuMWMtLjc3LjM3LTEuNi42LTIuNDcuNzN6Ii8+PC9zdmc+DQo="></object> -->
+								<img src="/images/Twitter.svg">
+							</a>
+						</li>
+						<li class="smLogo github">
+							<a class="linkWrapper" href="http://github.com/vdka">
+								<!-- <object type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQgNDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEwIDIyLjMwNDRjMCA1LjQzNTQgMy40MzggMTAuMDQ3NSA4LjIwNjUgMTEuNjc0NS42MDA0LjExMy44MTkyLS4yNjcuODE5Mi0uNTkzIDAtLjI5MjgtLjAxMDMtMS4wNjYtLjAxNjItMi4wOTI4LTMuMzM4Ljc0MzItNC4wNDItMS42NDk3LTQuMDQyLTEuNjQ5Ny0uNTQ2LTEuNDIxNi0xLjMzMjgtMS44LTEuMzMyOC0xLjgtMS4wODk1LS43NjM3LjA4MjUtLjc0NzguMDgyNS0uNzQ3OCAxLjIwNDUuMDg3IDEuODM4IDEuMjY4IDEuODM4IDEuMjY4IDEuMDcxMiAxLjg4IDIuODA5IDEuMzM3IDMuNDkyNiAxLjAyMi4xMDktLjc5NTMuNDE5Mi0xLjMzNy43NjE3LTEuNjQ1LTIuNjY0NS0uMzEwNS01LjQ2Ni0xLjM2NTctNS40NjYtNi4wODA1IDAtMS4zNDQuNDY3Ny0yLjQ0MiAxLjIzNTMtMy4zMDI0LS4xMjMtLjMxMS0uNTM0OC0xLjU2Mi4xMTgtMy4yNTU1IDAgMCAxLjAwNzYtLjMzMTYgMy4yOTk0IDEuMjYwNi45NTc3LS4yNzI3IDEuOTg0LS40MDk0IDMuMDA0Mi0uNDE0IDEuMDE5NS4wMDQ2IDIuMDQ1Ny4xNDEzIDMuMDA0OC40MTQgMi4yOTA0LTEuNTkyIDMuMjk2Ny0xLjI2MDYgMy4yOTY3LTEuMjYwNi42NTQgMS42OTM1LjI0MiAyLjk0NDQuMTE5IDMuMjU1Ni43NjkuODYwNCAxLjIzMyAxLjk1ODYgMS4yMzMgMy4zMDI0IDAgNC43MjYtMi44MDU0IDUuNzY2LTUuNDc4NyA2LjA3MTIuNDMxLjM4LjgxNCAxLjEzMDcuODE0IDIuMjc4IDAgMS42NDUyLS4wMTQgMi45NzIzLS4wMTQgMy4zNzU3IDAgLjMyOTIuMjE1OC43MTE0LjgyNS41OTEzQzMwLjU2NSAzMi4zNDczIDM0IDI3LjczOSAzNCAyMi4zMDQzIDM0IDE1LjUwODggMjguNjI2NyAxMCAyMS45OTkgMTAgMTUuMzczMiAxMCAxMCAxNS41MDg3IDEwIDIyLjMwNDR6Ii8+PC9zdmc+DQo="></object> -->
+								<img src="/images/Github.svg">
+							</a>
+						</li>
+						<li class="smLogo codepen">
+							<a class="linkWrapper" href="http://codepen.io/ejackwitz">
+								<!-- <object type="image/svg+xml" data="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQgNDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI3LjI3MyAyMC43NmwtNC4yODUtMi45OXYtNC44MTJsNy43NDQgNS4zODctMy40NiAyLjQxNHpNMjkuMDUgMjJsMi40NzQtMS43MjZ2My40NTJMMjkuMDUgMjJ6bS02LjA2MiA0LjIzbDQuMjg1LTIuOTkgMy40NiAyLjQxNS03Ljc0NSA1LjM4N3YtNC44MXptLTYuMjYtMi45OWw0LjI4NCAyLjk5djQuODEybC03Ljc0NC01LjM4NyAzLjQ2LTIuNDE0ek0xNC45NDggMjJsLTIuNDczIDEuNzI2di0zLjQ1MkwxNC45NSAyMnptNi4wNjMtNC4yM2wtNC4yOCAyLjk5LTMuNDYtMi40MTUgNy43NS01LjM4N3Y0Ljgxem0uOTkgNi42N0wxOC41MSAyMiAyMiAxOS41NiAyNS40OTYgMjIgMjIgMjQuNDR6bTExLjQ5LTYuMjc1YzAtLjAzLS4wMS0uMDYtLjAxLS4wODdsLS4wMTYtLjA1Yy0uMDA2LS4wMjUtLjAxNC0uMDUtLjAyNC0uMDc1bC0uMDI1LS4wNWMtLjAxLS4wMjQtLjAyLS4wNDctLjAzMy0uMDdsLS4wMy0uMDQ3LS4wNC0uMDYzLS4wMzUtLjA0NC0uMDUtLjA2LS4wNC0uMDQtLjA1NS0uMDUtLjA0NS0uMDQtLjAxNi0uMDItMTAuNTEtNy4zMWMtLjMzMy0uMjMtLjc2Ni0uMjMtMS4xIDBsLTEwLjUxMyA3LjMyYy0uMDA1LjAwMy0uMDEuMDEtLjAxNS4wMTJsLS4wNDQuMDMtLjA2LjA1LS4wNC4wNC0uMDUuMDU1LS4wNC4wNDNjLS4wMTQuMDItLjAzLjA0NS0uMDQuMDY2LS4wMS4wMi0uMDIuMDMtLjAzLjA1bC0uMDMzLjA3LS4wMi4wNWMtLjAxLjAyNS0uMDIuMDUtLjAyNi4wNzZsLS4wMTYuMDVjLS4wMS4wMjYtLjAxMy4wNTUtLjAyLjA4NWwtLjAwNi4wNDVjLS4wMDUuMDQyLS4wMS4wODctLjAxLjEzM3Y3LjMxM2MwIC4wNDcuMDA1LjA5LjAxLjEzNiAwIC4wMTUuMDA2LjAzLjAxLjA0NS4wMDUuMDMuMDEuMDU2LjAxNy4wODVsLjAxNS4wNS4wMjYuMDguMDI0LjA1Yy4wMS4wMi4wMi4wNDMuMDM0LjA2NWwuMDMuMDQ4Yy4wMTIuMDI0LjAyNi4wNDUuMDQuMDY1LjAxLjAxNC4wMjIuMDMuMDM0LjA0My4wMTguMDIuMDM0LjA0LjA1LjA1NWwuMDQuMDQuMDU3LjA1Yy4wMTMuMDEuMDI3LjAyNS4wNDMuMDM2LjAwNC4wMDQuMDEuMDEuMDE1LjAxMmwxMC41MTcgNy4zMmMuMTY0LjExNS4zNTUuMTczLjU0Ni4xNzMuMTkgMCAuMzgzLS4wNTcuNTUtLjE3M2wxMC41MS03LjMxMy4wMTctLjAxMmMuMDE2LS4wMS4wMy0uMDIuMDQ2LS4wMzMuMDItLjAxNi4wNC0uMDMuMDU1LS4wNWwuMDQtLjA0LjA1LS4wNTUuMDMtLjA0NmMuMDE1LS4wMi4wMy0uMDQuMDQtLjA2M2wuMDMtLjA0Yy4wMTMtLjAyLjAyNC0uMDQ1LjAzNC0uMDdsLjAyLS4wNDhjLjAxLS4wMjYuMDItLjA1LjAyLS4wNzdsLjAxNi0uMDUuMDItLjA4Ni4wMDYtLjA0M2MuMDA3LS4wNDMuMDEtLjA4Ny4wMS0uMTMzdi03LjMyYzAtLjA0NC0uMDAzLS4wOS0uMDEtLjEzMyAwLS4wMTgtLjAwNC0uMDMtLjAwNy0uMDQ3eiIvPjwvc3ZnPg0K"></object> -->
+								<img src="/images/Codepen.svg">
+							</a>
+						</li>
+					</ul>
+				</section>
+			</main>
+
+			<footer>
+				<small>&copy; Ethan Jackwitz 2015</small>
+				<a href="#top" id="toTop"></a>
+			</footer>
+		</div>
 	</body>
+	<script type="text/javascript" src="/js/min/scrollTop-min.js"></script>
+	<!-- Scripts non-blocking -->
+</html>
