@@ -3,7 +3,8 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  cursor: default; }
+  cursor: default;
+  min-width: 1200px; }
 
 #loadingScreen {
   background: #50514F;
@@ -44,12 +45,9 @@ html, body {
   visibility: hidden; }
 
 .mastImage {
-  background-image: url("/images/MastImage@3x.jpg");
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
   background-color: #50514F;
   position: absolute;
+  min-width: 1600px;
   height: 700px;
   width: 100%;
   z-index: -1; }

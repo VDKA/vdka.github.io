@@ -14,6 +14,7 @@ html, body {
 	font-family: $OpenSans;
 	cursor: default;
 	// background: $black;
+	min-width: 1200px;
 }
 
 #loadingScreen {
@@ -66,12 +67,9 @@ html, body {
 }
 
 .mastImage {
-	background-image: url($backgroundImage);
-	background-position: center top;
-	background-size: cover;
-	background-repeat: no-repeat;
 	background-color: $black;
 	position: absolute;
+	min-width: 1600px;
 	height: 700px;
 	width: 100%;
 	z-index: -1;
