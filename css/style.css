@@ -47,7 +47,7 @@ html, body {
 .mastImage {
   background-color: #50514F;
   position: absolute;
-  min-width: 1600px;
+  min-width: 1200px;
   height: 700px;
   width: 100%;
   z-index: -1; }
@@ -139,7 +139,7 @@ header {
     border-radius: 50%;
     position: absolute;
     top: 570px;
-    left: calc(50% - (250px/2) - 5px);
+    left: calc(50vw - (250px/2) - 5px);
     background-image: url("/images/ProfileImage@3x.jpg");
     background-position: center center;
     background-size: cover;
